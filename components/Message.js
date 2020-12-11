@@ -24,8 +24,8 @@ export const Message = ({ item, onLongPress, onHate, currentName }) => {
           </View>
           <Text style={styles.messageContent}>{message.content}</Text>
           <View style={styles.messageProperties}>
-            {/* TODO: #3 Fake News: Here we likely want to render 
-            if message is fake news (message.fakenews == true) {<FakeNewsWarning />} */}
+            {/* TODO: #3 Fake News: Here we likely want to render  */}
+            {message.fakenews == true && <FakeNewsWarning />}
             <View>
               {/* TODO: #6 Hate Trumpeet: Add a pressable component that calls `onHate(id)` */}
               {/* In this pressable component show a hate counter */}
