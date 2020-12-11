@@ -16,15 +16,15 @@ export function Settings({ settings, setSettings }) {
       {/* TODO: #1 YELL MODE
           activate Switch to enable Yell mode
       */}
-      {/* <View style={styles.switchContainer}>
+      <View style={styles.switchContainer}>
         <Text style={styles.label}>Activate Yell-Mode 📢</Text>
         <Switch
-          onValueChange={ isInYellMode =>
+          onValueChange={isInYellMode =>
             setSettings({ ...settings, isInYellMode })
           }
           value={settings.isInYellMode}
         />
-      </View> */}
+      </View>
 
       {/* TODO: #5 FILTER OWN TRUMPEETS
           activate Switch to see only own trumpeets

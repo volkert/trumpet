@@ -31,6 +31,9 @@ export const MessageList = ({ name, settings }) => {
 
     // TODO: #1 YELL MODE
     // tranform message to yell mode specification
+    if (settings.isInYellMode) {
+      message = message.toUpperCase()
+    }
 
     sendMessage(name, message)
     setMessageInput('')
