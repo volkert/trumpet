@@ -57,7 +57,6 @@ export const MessageList = ({ name, settings }) => {
       const cancelButtonIndex = options.findIndex(item => item.match(/cancel/i))
 
       if (!fakeNewsButtonIndex && !destructiveButtonIndex) return
-
       showActionSheetWithOptions(
         {
           options,

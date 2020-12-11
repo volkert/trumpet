@@ -13,7 +13,6 @@ export function Settings({ settings, setSettings }) {
           value={settings.showCharacterCount}
         />
       </View>
-
       {/* TODO: #1 YELL MODE
           activate Switch to enable Yell mode
       */}
