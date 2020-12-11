@@ -29,6 +29,17 @@ export const Message = ({ item, onLongPress, onHate, currentName }) => {
             <View>
               {/* TODO: #6 Hate Trumpeet: Add a pressable component that calls `onHate(id)` */}
               {/* In this pressable component show a hate counter */}
+              <Pressable onPress={() => onHate(id)}>
+                <Text
+                  style={{
+                    fontWeight: message.hates?.includes(currentName)
+                      ? 'bold'
+                      : 'normal',
+                  }}
+                >
+                  🤬 {message.hates?.length || 0}
+                </Text>
+              </Pressable>
             </View>
           </View>
         </View>
