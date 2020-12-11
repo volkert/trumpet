@@ -92,7 +92,11 @@ export const MessageList = ({ name, settings }) => {
       <FlatList
         style={styles.messageList}
         // TODO: #5 filter to own messages if activated in settings
-        data={messages}
+        data={
+          settings.filterOwnMessages
+            ? messages.filter(([, message]) => message.name === name)
+            : messages
+        }
         keyExtractor={([id]) => id}
         renderItem={({ item }) => (
           <Message

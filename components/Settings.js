@@ -30,7 +30,7 @@ export function Settings({ settings, setSettings }) {
       {/* TODO: #5 FILTER OWN TRUMPEETS
           activate Switch to see only own trumpeets
       */}
-      {/* <View style={styles.switchContainer}>
+      <View style={styles.switchContainer}>
         <Text style={styles.label}>Only show own trumpeets 🤳</Text>
         <Switch
           onValueChange={filterOwnMessages =>
@@ -38,7 +38,7 @@ export function Settings({ settings, setSettings }) {
           }
           value={settings.filterOwnMessages}
         />
-      </View> */}
+      </View>
     </View>
   )
 }
