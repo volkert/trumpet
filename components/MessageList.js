@@ -40,7 +40,7 @@ export const MessageList = ({ name, settings }) => {
     (id, ownerName) => {
       let options = ['Cancel']
       // TODO: #4 this should be true if you are the trumpeet's owner only
-      if (true) {
+      if (ownerName === name) {
         options = ['Delete Trumpeet', ...options]
       }
 
