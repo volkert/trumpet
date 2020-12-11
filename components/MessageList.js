@@ -45,7 +45,7 @@ export const MessageList = ({ name, settings }) => {
       }
 
       // TODO: #3 this should be true if you are the real Donald
-      if (false) {
+      if (isRealDonald) {
         options = ['FAKE NEWS', ...options]
       }
       const fakeNewsButtonIndex = options.findIndex(item =>
@@ -69,6 +69,9 @@ export const MessageList = ({ name, settings }) => {
               removeMessage(id)
               break
             // TODO: #3 Fake News: Handle click on fakeNewsButtonIndex.
+            case fakeNewsButtonIndex:
+              toggleFakeNewsMessage(id)
+              break
             default:
               break
           }
