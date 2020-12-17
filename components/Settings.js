@@ -13,24 +13,23 @@ export function Settings({ settings, setSettings }) {
           value={settings.showCharacterCount}
         />
       </View>
-
       {/* TODO: #1 YELL MODE
           activate Switch to enable Yell mode
       */}
-      {/* <View style={styles.switchContainer}>
+      <View style={styles.switchContainer}>
         <Text style={styles.label}>Activate Yell-Mode 📢</Text>
         <Switch
-          onValueChange={ isInYellMode =>
+          onValueChange={isInYellMode =>
             setSettings({ ...settings, isInYellMode })
           }
           value={settings.isInYellMode}
         />
-      </View> */}
+      </View>
 
       {/* TODO: #5 FILTER OWN TRUMPEETS
           activate Switch to see only own trumpeets
       */}
-      {/* <View style={styles.switchContainer}>
+      <View style={styles.switchContainer}>
         <Text style={styles.label}>Only show own trumpeets 🤳</Text>
         <Switch
           onValueChange={filterOwnMessages =>
@@ -38,7 +37,7 @@ export function Settings({ settings, setSettings }) {
           }
           value={settings.filterOwnMessages}
         />
-      </View> */}
+      </View>
     </View>
   )
 }

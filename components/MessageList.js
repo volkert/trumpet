@@ -31,6 +31,9 @@ export const MessageList = ({ name, settings }) => {
 
     // TODO: #1 YELL MODE
     // tranform message to yell mode specification
+    if (settings.isInYellMode) {
+      message = message.toUpperCase()
+    }
 
     sendMessage(name, message)
     setMessageInput('')
@@ -40,12 +43,12 @@ export const MessageList = ({ name, settings }) => {
     (id, ownerName) => {
       let options = ['Cancel']
       // TODO: #4 this should be true if you are the trumpeet's owner only
-      if (true) {
+      if (ownerName === name) {
         options = ['Delete Trumpeet', ...options]
       }
 
       // TODO: #3 this should be true if you are the real Donald
-      if (false) {
+      if (isRealDonald) {
         options = ['FAKE NEWS', ...options]
       }
       const fakeNewsButtonIndex = options.findIndex(item =>
@@ -57,7 +60,6 @@ export const MessageList = ({ name, settings }) => {
       const cancelButtonIndex = options.findIndex(item => item.match(/cancel/i))
 
       if (!fakeNewsButtonIndex && !destructiveButtonIndex) return
-
       showActionSheetWithOptions(
         {
           options,
@@ -70,6 +72,9 @@ export const MessageList = ({ name, settings }) => {
               removeMessage(id)
               break
             // TODO: #3 Fake News: Handle click on fakeNewsButtonIndex.
+            case fakeNewsButtonIndex:
+              toggleFakeNewsMessage(id)
+              break
             default:
               break
           }
@@ -92,7 +97,11 @@ export const MessageList = ({ name, settings }) => {
       <FlatList
         style={styles.messageList}
         // TODO: #5 filter to own messages if activated in settings
-        data={messages}
+        data={
+          settings.filterOwnMessages
+            ? messages.filter(([, message]) => message.name === name)
+            : messages
+        }
         keyExtractor={([id]) => id}
         renderItem={({ item }) => (
           <Message
