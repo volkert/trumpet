@@ -1,10 +1,9 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
-import WarningIcon from '../assets/warning-icon'
+import { StyleSheet, View, Text, Image } from 'react-native'
 
 export const FakeNewsWarning = () => (
   <View style={styles.fakenews}>
-    <WarningIcon width={16} height={16} style={{ marginRight: 4 }} />
+    <Image style={{ marginRight: 4, height: 14, width: 14 }} source={require("../assets/warning.png")} ></Image>
     <Text style={styles.fakenewsText}>This claim is disputed.</Text>
   </View>
 )
